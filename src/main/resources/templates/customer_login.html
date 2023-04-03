@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org"
+	xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="header :: header">
+<title>Bootstrap 5 Example</title>
+</head>
+<body>
+	<div th:replace="navbar :: navbar"></div>
+	<section class="vh-100 gradient-custom-customer-login container">
+		<div class="container-fluid">
+			<div class="row  justify-content-center align-items-center h-100">
+				<div class="col-sm-6 text-black">
+
+					<div
+						class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5 card shadow-1-strong card-registration">
+
+						<form action="#" th:action="@{/customerLogin}"
+							th:object="${customerLogin}" method="post" style="width: 23rem;">
+
+							<h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Customer
+								Log in</h3>
+							<p th:if="${errorMessage}" class="errorMessage text-danger">Username or
+								Password is incorrect</p>
+							<div class="form-outline mb-4">
+								<label class="form-label" for="customerEmail">Email
+									address</label> <input type="email" id="customerEmail" name="customerEmail"
+									class="form-control form-control-lg" />
+							</div>
+
+							<div class="form-outline mb-4">
+								<label class="form-label" for="customerPassword">Password</label>
+								<input type="password" id="customerPassword" name="customerPassword"
+									class="form-control form-control-lg" />
+							</div>
+
+							<div class="pt-1 mb-4">
+								<button class="btn btn-info btn-lg btn-block" type="submit">Login</button>
+							</div>
+
+							<p class="small mb-5 pb-lg-2">
+								<a class="text-muted" href="#!">Forgot password?</a>
+							</p>
+							<p>
+								Don't have an account? <a href="/customer_registration"
+									class="link-info">Register here</a>
+							</p>
+
+						</form>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
